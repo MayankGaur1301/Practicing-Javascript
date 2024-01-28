@@ -1,17 +1,14 @@
-const h2 = document.querySelector("h2");
-const btn = document.querySelector(".btn");
-let stranger = true;
+const cont = document.querySelector("#container");
+const love = document.querySelector("i");
 
-btn.addEventListener("click", function () {
-  if (stranger) {
-    btn.innerHTML = "Add Friend";
-    h2.innerHTML = "Stranger";
-    h2.style.color = "red"
-    return (stranger = false);
-  } else {
-    btn.innerHTML = "Remove Friend";
-    h2.innerHTML = "Friends";
-    h2.style.color = "green"
-    return (stranger = true);
-  }
+cont.addEventListener("dblclick", function () {
+  love.style.transform = "translate(-50%, -50%) scale(1)";
+  love.style.opacity = 0.8;
+
+  setTimeout(() => {
+    love.style.opacity = 0;
+  }, 2000);
+  setTimeout(() => {
+    love.style.transform = "translate(-50%, -50%) scale(0)";
+  }, 3000);
 });
